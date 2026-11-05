@@ -1,3 +1,6 @@
-# BlewUP — Skincare Portfolio
+# Portfolio
 
-Animated landscape portfolio for Shafeen Beauty and Amiy SkinCare by BlewUP. Static site, hosted with GitHub Pages.
+- `nithin/` — Nithin.M portfolio
+- root — BlewUP portfolio version
+
+Static site, hosted with GitHub Pages.
