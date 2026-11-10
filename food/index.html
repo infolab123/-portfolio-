@@ -483,6 +483,33 @@ html,body{height:100%;background:#000814;overflow:hidden;font-family:Archivo,sys
 #sR figcaption em{display:block;margin-top:6px;font-size:20px;font-style:normal;color:#C9B497}
 #sR.on .rc{animation:rcin .9s var(--ease) calc(.25s + var(--i)*.12s) both}
 @keyframes rcin{from{opacity:0;transform:translateY(120px) rotate(var(--r))}to{opacity:1;transform:rotate(var(--r))}}
+#sBw{background:#EEF0E2;color:#16301E}
+#sBw .intro{position:absolute;left:110px;top:150px;width:540px}
+#sBw .lg{height:64px;width:auto;margin-bottom:26px}
+#sBw h2{font-size:84px;line-height:.98;font-weight:900;letter-spacing:-.045em;margin:0}
+#sBw .d{margin-top:28px;font-size:29px;line-height:1.45;color:#3E5444}
+#sBw .tags{margin-top:36px;display:flex;gap:12px}
+#sBw .tags span{font-size:24px;font-weight:700;padding:11px 24px;border-radius:999px;background:#16301E;color:#EEF0E2}
+#sBw .wall{position:absolute;left:700px;right:170px;top:120px;bottom:120px;display:grid;gap:16px;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr);grid-template-areas:"a b c d" "a e e d" "f g h i"}
+#sBw figure{position:relative;margin:0;overflow:hidden;border-radius:18px;background:#1E3A26;box-shadow:0 18px 36px rgba(22,48,30,.22)}
+#sBw figure img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--ease)}
+#sBw figure:hover img{transform:scale(1.06)}
+#sBw figcaption{position:absolute;left:12px;bottom:12px;font-size:19px;font-weight:700;color:#fff;background:rgba(22,48,30,.72);padding:6px 12px;border-radius:8px}
+#sBw.on figure{animation:bwin .9s var(--ease) calc(.2s + var(--i)*.07s) both}
+@keyframes bwin{from{opacity:0;transform:translateY(60px) scale(.94)}to{opacity:1;transform:none}}
+#sBr{background:#16301E;color:#EEF0E2}
+#sBr .mesh{background:radial-gradient(40% 50% at 70% 50%,#2F5A33 0,transparent 70%),radial-gradient(30% 40% at 0% 100%,#24452B 0,transparent 70%)}
+#sBr h2{position:absolute;left:128px;top:220px;margin:0;font-size:120px;line-height:.98;font-weight:900;letter-spacing:-.05em}
+#sBr h2>span{display:block}
+#sBr h2 .serif{font-family:Fraunces,serif;font-weight:400;font-style:italic;letter-spacing:-.02em;color:#B9D27A;font-size:96px}
+#sBr .d{position:absolute;left:128px;top:560px;width:720px;font-size:32px;line-height:1.45;color:#CBD6C0}
+#sBr .ph2{position:absolute;right:560px;top:250px;width:380px;height:570px;border-radius:24px;overflow:hidden;transform:rotate(-7deg);box-shadow:0 40px 80px rgba(0,0,0,.45)}
+#sBr .ph2 img{width:100%;height:100%;object-fit:cover}
+#sBr .one{position:absolute;right:200px;top:130px}
+#sBr .one .phone{width:420px;height:800px;border-radius:56px;border:12px solid #0B1020;box-shadow:0 60px 110px rgba(0,0,0,.5);transform:rotate(4deg);cursor:pointer}
+#sBr .one .phone video{border-radius:44px}
+#sBr.on .one .phone{animation:igin 1.3s var(--ease) .3s both}
+#sBr.on .ph2{animation:bwin 1s var(--ease) .15s both}
 /* ===== texture layers ===== */
 .slide{isolation:isolate}
 .slide::before,.slide::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1}
@@ -556,7 +583,7 @@ html,body{height:100%;background:#000814;overflow:hidden;font-family:Archivo,sys
     <div class="float" style="animation-delay:-1s"><div class="card c4"><img src="media/cafe1.jpg" alt="Café creative" fetchpriority="high"></div></div>
     <div class="float"><div class="card c1"><img src="media/cafe2.jpg" alt="Iced coffee creative" fetchpriority="high"></div></div>
     <div class="float" style="animation-delay:-2s"><div class="card c2"><video data-src="../nithin/media/lvo6.mp4" poster="../nithin/media/po6.jpg" muted loop playsinline preload="auto"></video></div></div>
-    <div class="float" style="animation-delay:-3.5s"><div class="card c3"><img src="media/cafe4.jpg" alt="Matcha bar creative" fetchpriority="high"></div></div>
+    <div class="float" style="animation-delay:-3.5s"><div class="card c3"><img src="media/cafe4.jpg" alt="Beyondd espresso creative" fetchpriority="high"></div></div>
     <div class="float" style="animation-delay:-2.7s"><div class="card c5"><img src="../nithin/media/po4.jpg" alt="Bakery reel" fetchpriority="high"></div></div>
   </div>
 </section>
@@ -569,14 +596,14 @@ html,body{height:100%;background:#000814;overflow:hidden;font-family:Archivo,sys
   <div class="verbs">
     <span class="stomp" style="--d:1.4s">Planned it.</span><span class="stomp" style="--d:1.7s">Shot it.</span><span class="stomp" style="--d:2s">Cut it.</span><span class="stomp" style="--d:2.3s">Designed it.</span><span class="stomp" style="--d:2.6s">Grew it.</span>
   </div>
-  <p class="tag fade" style="--d:3s">Beyondd Coffee and a coffee &amp; matcha bar: content, shoots, reels and growth.</p>
+  <p class="tag fade" style="--d:3s">Beyondd Coffee and Brownd Coffee &amp; Matcha Bar: content, shoots, reels and growth.</p>
 </section>
 
 <!-- 3 CAFE CREATIVES -->
 <section class="slide dk" id="s5" data-name="Café creatives">
   <div class="mesh"></div><div class="grain"></div>
   <h2 class="split flip" data-split>Creatives</h2>
-  <div class="cap"><div class="n" id="crn">01</div><div class="t" id="crt"></div><p>Designed and shot for our caf&eacute; clients.</p></div>
+  <div class="cap"><div class="n" id="crn">01</div><div class="t" id="crt"></div><p>Designed and shot for Beyondd Coffee.</p></div>
   <div class="scene tilt"><div class="ring" id="ring"></div></div>
 </section>
 
@@ -585,7 +612,7 @@ html,body{height:100%;background:#000814;overflow:hidden;font-family:Archivo,sys
   <div class="mesh"></div><div class="grain"></div>
   <div class="head">
     <h2><span class="rise" data-words>Café reels,</span> <span class="serif rise" data-words style="--d:200ms">shot &amp; cut</span> <span class="rise" data-words style="--d:380ms">end to end.</span></h2>
-    <p class="d fade" style="--d:.6s">Beyondd Coffee and the coffee &amp; matcha bar.</p>
+    <p class="d fade" style="--d:.6s">Beyondd Coffee.</p>
   </div>
   <div class="stat fade" style="--d:.8s"><b data-count="3972" data-pre="+" data-suf="%" data-comma="1">0</b><span>accounts reached,<br>Beyondd Coffee</span></div>
   <div class="cartbtn pop" style="--d:1s"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 8h6l5 24h24l4-16H13" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="39" r="3.5" fill="currentColor"/><circle cx="36" cy="39" r="3.5" fill="currentColor"/></svg><b id="cartn" data-cartn>0</b></div>
@@ -607,6 +634,33 @@ html,body{height:100%;background:#000814;overflow:hidden;font-family:Archivo,sys
   <div class="mesh"></div><div class="grain"></div>
   <h2 class="rise" data-words>Every screen, straight from Beyondd's Insights</h2>
   <div class="rrow"><figure class="rc" style="--i:0;--r:-5.0deg"><div class="phone shot"><img src="media/by1.jpg" alt="Beyondd Instagram Insights: 41,081 views on one reel" loading="lazy"></div><figcaption><b>41,081</b><span>views on one reel</span><em>33,820 accounts reached</em></figcaption></figure><figure class="rc" style="--i:1;--r:-2.5deg"><div class="phone shot"><img src="media/by2.jpg" alt="Beyondd Instagram Insights: 38,465 views on the next" loading="lazy"></div><figcaption><b>38,465</b><span>views on the next</span><em>29,021 accounts reached</em></figcaption></figure><figure class="rc" style="--i:2;--r:0.0deg"><div class="phone shot"><img src="media/by3.jpg" alt="Beyondd Instagram Insights: 41K top reel of the year" loading="lazy"></div><figcaption><b>41K</b><span>top reel of the year</span><em>Top 3 reels: 41K, 38.4K, 27.7K</em></figcaption></figure><figure class="rc" style="--i:3;--r:2.5deg"><div class="phone shot"><img src="media/by4.jpg" alt="Beyondd Instagram Insights: 10,725 views in 90 days" loading="lazy"></div><figcaption><b>10,725</b><span>views in 90 days</span><em>2,155 viewers, 3,278 followers</em></figcaption></figure><figure class="rc" style="--i:4;--r:5.0deg"><div class="phone shot"><img src="media/by5.jpg" alt="Beyondd Instagram Insights: +3,972% accounts reached" loading="lazy"></div><figcaption><b>+3,972%</b><span>accounts reached</span><em>30 days, 7,661 views</em></figcaption></figure></div>
+</section>
+
+<section class="slide lt" id="sBw" data-name="Brownd">
+  <div class="intro">
+    <h2 class="rise" data-words>Brownd Coffee &amp; Matcha Bar</h2>
+    <p class="d fade" style="--d:.5s">A full menu shoot for a coffee and matcha bar: hot cups, iced pours and tonics, all styled in the caf&eacute;'s jungle green.</p>
+    <div class="tags pop" style="--d:.9s"><span>Coffee</span><span>Matcha</span><span>Tonics</span></div>
+  </div>
+  <div class="wall">
+    <figure style="--i:0;grid-area:a"><img src="media/bw4.jpg" alt="Iced pumpkin spice matcha latte" loading="lazy"><figcaption>Iced pumpkin spice matcha</figcaption></figure>
+    <figure style="--i:1;grid-area:b"><img src="media/bw1.jpg" alt="Hot latte" loading="lazy"><figcaption>Hot latte</figcaption></figure>
+    <figure style="--i:2;grid-area:c"><img src="media/bw3.jpg" alt="Hot caramel latte" loading="lazy"><figcaption>Hot caramel latte</figcaption></figure>
+    <figure style="--i:3;grid-area:d"><img src="media/bw8.jpg" alt="Dirty matcha being poured" loading="lazy"><figcaption>Dirty matcha</figcaption></figure>
+    <figure style="--i:4;grid-area:e"><img src="media/bw10.jpg" alt="Strawberry matcha tonic" loading="lazy"><figcaption>Strawberry matcha tonic</figcaption></figure>
+    <figure style="--i:5;grid-area:f"><img src="media/bw2.jpg" alt="Blueberry hojicha latte" loading="lazy"><figcaption>Blueberry hojicha latte</figcaption></figure>
+    <figure style="--i:6;grid-area:g"><img src="media/bw5.jpg" alt="Hot caramel matcha latte" loading="lazy"><figcaption>Hot caramel matcha</figcaption></figure>
+    <figure style="--i:7;grid-area:h"><img src="media/bw6.jpg" alt="Iced americano" loading="lazy"><figcaption>Iced americano</figcaption></figure>
+    <figure style="--i:8;grid-area:i"><img src="media/bw7.jpg" alt="Iced caramel latte" loading="lazy"><figcaption>Iced caramel latte</figcaption></figure>
+  </div>
+</section>
+
+<section class="slide dk" id="sBr" data-name="Brownd reels">
+  <div class="mesh"></div><div class="grain"></div>
+  <h2><span class="rise" data-words>Matcha,</span><span class="serif rise" data-words style="--d:250ms">poured for the reel.</span></h2>
+  <p class="d fade" style="--d:.6s">Slow pours, layered glasses and the Brownd cup front and centre. Tap the reel to watch it with sound.</p>
+  <div class="ph2"><img src="media/bw9.jpg" alt="Iced americano at Brownd" loading="lazy"></div>
+  <div class="one"><div class="phone" data-full="../nithin/media/fo1.mp4"><video data-src="../nithin/media/lvo1.mp4" poster="../nithin/media/po1.jpg" muted loop playsinline preload="none"></video><span class="lbl">Brownd: iced pour</span></div></div>
 </section>
 
 <!-- 6 MORE FOOD -->
@@ -642,11 +696,10 @@ html,body{height:100%;background:#000814;overflow:hidden;font-family:Archivo,sys
 <script>
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const REELS=[
- {p:"media/pb1.jpg",v:"media/lvb1.mp4",f:"media/fb1.mp4",t:"Beyondd: counter moment"},
- {p:"../nithin/media/po6.jpg",v:"../nithin/media/lvo6.mp4",f:"../nithin/media/fo6.mp4",t:"Beyondd: Nutella waffle POV"},
- {p:"../nithin/media/po1.jpg",v:"../nithin/media/lvo1.mp4",f:"../nithin/media/fo1.mp4",t:"Matcha bar: iced pour"}];
+ {p:"media/pb1.jpg",v:"media/lvb1.mp4",f:"media/fb1.mp4",t:"Counter moment"},
+ {p:"../nithin/media/po6.jpg",v:"../nithin/media/lvo6.mp4",f:"../nithin/media/fo6.mp4",t:"Nutella waffle POV"}];
 const OTHERS=[];
-const CREATIVES=[["media/cafe1.jpg","Café favourites"],["media/cafe2.jpg","Iced coffee launch"],["media/cafe3.jpg","Menu spotlight"],["media/cafe4.jpg","Matcha series"],["media/cafe5.jpg","Weekend specials"]];
+const CREATIVES=[["media/cafe1.jpg","Powerbowl"],["media/cafe2.jpg","Iced Vienna coffee"],["media/cafe3.jpg","Rasamalai tres leches"],["media/cafe4.jpg","Espresso hour"],["media/cafe5.jpg","A bond that's timeless"]];
 const STEPS=[["Plan","Monthly calendars, hooks and formats built around the product line."],["Shoot","Product, model and talking-head shoots, directed by our team."],["Edit","Reels cut for the scroll: fast openers, captions, clean sound."],["Design","Static posts and launch creatives that carry the brand's look."],["Sell","Offers and campaigns that turn views into orders."]];
 const TAGS=["Great skin starts within","Inside-out care","Radiance in every drop","More than skincare","A daily self-care ritual","Care in every drop"];
 const PRODUCTS=[["Acne SOS","Plant-powered oral formula for breakouts, uneven tone and everyday skin concerns."],["Tranquil Tonic","A calming oral drop for busy minds and restless evenings."],["Gut Reset","A few drops after meals for everyday gut comfort and balance."],["Muscle Mercy","A few drops for everyday muscle and joint ease from within."],["Period Pacifier","A few drops to make your period week feel a little more manageable."],["Calm & Glow","A kit for stress-related breakouts."]];
@@ -723,7 +776,7 @@ const lb=$("#lb"),lbv=$("#lbv");
 function closeLb(){lb.classList.remove("open");lbv.pause();lbv.removeAttribute("src");lbv.load();playVids(slides[cur],true);}
 $$(".track").forEach(tr=>tr.addEventListener("click",e=>{const ph=e.target.closest(".phone");if(!ph)return;playVids(slides[cur],false);lbv.poster=(ph.querySelector('video')||{}).poster||'';lbv.preload='auto';lbv.src=ph.dataset.full;lbv.muted=false;lb.classList.add("open");lbv.play().catch(()=>{});}));
 $("#lbx").onclick=closeLb;
-$$("#sM .phone").forEach(ph=>ph.addEventListener("click",()=>{playVids(slides[cur],false);lbv.poster=(ph.querySelector("video")||{}).poster||"";lbv.preload="auto";lbv.src=ph.dataset.full;lbv.muted=false;lb.classList.add("open");lbv.play().catch(()=>{});}));lb.addEventListener("click",e=>{if(e.target===lb)closeLb();});
+$$("#sM .phone,#sBr .phone").forEach(ph=>ph.addEventListener("click",()=>{playVids(slides[cur],false);lbv.poster=(ph.querySelector("video")||{}).poster||"";lbv.preload="auto";lbv.src=ph.dataset.full;lbv.muted=false;lb.classList.add("open");lbv.play().catch(()=>{});}));lb.addEventListener("click",e=>{if(e.target===lb)closeLb();});
 
 const start=parseInt(location.hash.slice(1))||1;
 go(start-1);
