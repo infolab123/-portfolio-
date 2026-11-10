@@ -510,6 +510,19 @@ html,body{height:100%;background:#000814;overflow:hidden;font-family:Archivo,sys
 #sBr .one .phone video{border-radius:44px}
 #sBr.on .one .phone{animation:igin 1.3s var(--ease) .3s both}
 #sBr.on .ph2{animation:bwin 1s var(--ease) .15s both}
+:is(#s6,#s6b) .aisle{-webkit-mask-image:none;mask-image:none}
+:is(#s6,#s6b) .track{animation:none;width:auto;padding:28px 0 0;justify-content:center}
+#s6 .track{gap:110px}
+#s6 .stat{display:none}
+#s6 .label{flex-direction:row!important;margin-top:24px!important}
+:is(#s6,#s6b) .label{flex-direction:column;gap:10px;margin-top:20px}
+:is(#s6,#s6b).on .prod .phone{animation:bob 3.2s ease-in-out calc(1.4s + var(--i)*.35s) infinite alternate}
+@keyframes bob{from{transform:translateY(0) rotate(-1.2deg)}to{transform:translateY(-18px) rotate(1.2deg)}}
+#s6b .track{gap:30px}
+#s6b .prod{width:330px}
+#s6b .prod .phone{width:300px;height:533px}
+#s6b .label{flex-direction:column;gap:10px;margin-top:20px}
+#s6b .plank{top:880px}
 /* ===== texture layers ===== */
 .slide{isolation:isolate}
 .slide::before,.slide::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1}
@@ -707,7 +720,8 @@ html,body{height:100%;background:#000814;overflow:hidden;font-family:Archivo,sys
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const REELS=[
  {p:"media/pb1.jpg",v:"media/lvb1.mp4",f:"media/fb1.mp4",t:"Counter moment"},
- {p:"../nithin/media/po6.jpg",v:"../nithin/media/lvo6.mp4",f:"../nithin/media/fo6.mp4",t:"Nutella waffle POV"}];
+ {p:"../nithin/media/po6.jpg",v:"../nithin/media/lvo6.mp4",f:"../nithin/media/fo6.mp4",t:"Nutella waffle POV"},
+ {p:"media/pb2.jpg",v:"media/lvb2.mp4",f:"media/fb2.mp4",t:"Iced espresso pour"}];
 const OTHERS=[];
 const CRUMBS=[
  {p:"media/pc1.jpg",v:"media/lvc1.mp4",f:"media/fc1.mp4",t:"Hi, we are Crumbs"},
@@ -732,8 +746,8 @@ $("#tick").innerHTML=STEPS.map((s,i)=>`<div class="step"><div class="num">0${i+1
 $("#dots").innerHTML=STEPS.map(()=>"<i></i>").join("");
 $("#ring").innerHTML=[...CREATIVES,...CREATIVES].map((c,i)=>`<figure style="transform:rotateY(${i*360/(CREATIVES.length*2)}deg) translateZ(600px)"><img loading="lazy" decoding="async" src="${c[0]}" alt="${esc(c[1])}"></figure>`).join("");
 const prodHTML=(x,i)=>`<div class="prod" style="--i:${i}"><div class="phone" data-full="${x.f}"><video data-src="${x.v}" poster="${x.p}" muted loop playsinline preload="none"></video></div><div class="label"><span>${esc(x.t)}</span><button type="button" data-add>+ Add to cart</button></div></div>`;
-$("#track").innerHTML=[...REELS,...REELS,...REELS,...REELS].map((x,i)=>prodHTML(x,i%REELS.length)).join("");
-$("#track3").innerHTML=[...CRUMBS,...CRUMBS].map((x,i)=>prodHTML(x,i%CRUMBS.length)).join("");
+$("#track").innerHTML=REELS.map(prodHTML).join("");
+$("#track3").innerHTML=CRUMBS.map(prodHTML).join("");
 
 let cartN=0;
 $$(".track").forEach(tr=>tr.addEventListener("click",e=>{const btn=e.target.closest("[data-add]");if(!btn)return;e.stopPropagation();
@@ -759,8 +773,8 @@ const timers=[];const clearT=()=>{while(timers.length)clearInterval(timers.pop()
 function count(el){const to=+el.dataset.count,dec=+(el.dataset.dec||0),suf=el.dataset.suf||"",comma=el.dataset.comma;const t0=performance.now(),D=1700;
   (function f(t){const k=Math.min(1,(t-t0)/D),e=1-Math.pow(1-k,4),v=to*e;let s=dec?v.toFixed(dec):Math.round(v).toString();if(comma)s=(+s).toLocaleString("en-IN");el.textContent=(el.dataset.pre||"")+s+suf;if(k<1)requestAnimationFrame(f);})(t0);}
 function vplay(v){if(!v.src){v.preload="auto";v.src=v.dataset.src;}v.muted=true;const p=v.play();p&&p.catch&&p.catch(()=>{});}
-function playVids(sl,on){$$("video[data-src]",sl).forEach(v=>{if(v.closest(".track"))return;on?vplay(v):v.pause();});
-  const ai=sl.querySelector(".aisle");if(!ai)return;
+function playVids(sl,on){$$("video[data-src]",sl).forEach(v=>{on?vplay(v):v.pause();});
+  const ai=null;if(!ai)return;
   if(on){if("IntersectionObserver" in window){sl._io=sl._io||new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;e.isIntersecting?vplay(v):v.pause();}),{root:ai,rootMargin:"0px 400px",threshold:.05});$$(".track video",sl).forEach(v=>sl._io.observe(v));}else $$(".track video",sl).slice(0,6).forEach(vplay);}
   else{$$(".track video",sl).forEach(v=>v.pause());sl._io&&sl._io.disconnect();}}
 function warm(n){const sl=slides[n];if(!sl)return;$$(".track video",sl).slice(0,6).forEach(v=>{if(!v.src){v.preload="auto";v.src=v.dataset.src;}});$$("img[loading=lazy]",sl).forEach(i=>{i.loading="eager";});$$("video[data-src]",sl).forEach(v=>{if(!v.src&&!v.closest(".track")){v.preload="metadata";v.src=v.dataset.src;}});}
