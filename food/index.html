@@ -512,7 +512,9 @@ html,body{height:100%;background:#000814;overflow:hidden;font-family:Archivo,sys
 #sBr.on .ph2{animation:bwin 1s var(--ease) .15s both}
 :is(#s6,#s6b) .aisle{-webkit-mask-image:none;mask-image:none}
 :is(#s6,#s6b) .track{animation:none;width:auto;padding:28px 0 0;justify-content:center}
-#s6 .track{gap:110px}
+#s6 .track{gap:80px;width:max-content;padding:28px 128px 0;justify-content:flex-start}
+#s6 .aisle{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+#s6 .aisle::-webkit-scrollbar{display:none}
 #s6 .stat{display:none}
 #s6 .label{flex-direction:row!important;margin-top:24px!important}
 :is(#s6,#s6b) .label{flex-direction:column;gap:10px;margin-top:20px}
@@ -624,7 +626,7 @@ html,body{height:100%;background:#000814;overflow:hidden;font-family:Archivo,sys
   <div class="mesh"></div><div class="grain"></div>
   <div class="head">
     <h2><span class="rise" data-words>Café reels,</span> <span class="serif rise" data-words style="--d:200ms">shot &amp; cut</span> <span class="rise" data-words style="--d:380ms">end to end.</span></h2>
-    <p class="d fade" style="--d:.6s">Beyondd Coffee.</p>
+    <p class="d fade" style="--d:.6s">Beyondd Coffee. Swipe the shelf, tap a reel to watch with sound.</p>
   </div>
   <div class="stat fade" style="--d:.8s"><b data-count="3972" data-pre="+" data-suf="%" data-comma="1">0</b><span>accounts reached,<br>Beyondd Coffee</span></div>
   <div class="cartbtn pop" style="--d:1s"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 8h6l5 24h24l4-16H13" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="39" r="3.5" fill="currentColor"/><circle cx="36" cy="39" r="3.5" fill="currentColor"/></svg><b id="cartn" data-cartn>0</b></div>
@@ -719,9 +721,16 @@ html,body{height:100%;background:#000814;overflow:hidden;font-family:Archivo,sys
 <script>
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const REELS=[
- {p:"media/pb1.jpg",v:"media/lvb1.mp4",f:"media/fb1.mp4",t:"Counter moment"},
  {p:"../nithin/media/po6.jpg",v:"../nithin/media/lvo6.mp4",f:"../nithin/media/fo6.mp4",t:"Nutella waffle POV"},
- {p:"media/pb2.jpg",v:"media/lvb2.mp4",f:"media/fb2.mp4",t:"Iced espresso pour"}];
+ {p:"media/pb1.jpg",v:"media/lvb1.mp4",f:"media/fb1.mp4",t:"Counter moment"},
+ {p:"media/pb3.jpg",v:"media/lvb3.mp4",f:"media/fb3.mp4",t:"Add some colour"},
+ {p:"media/pb6.jpg",v:"media/lvb6.mp4",f:"media/fb6.mp4",t:"For non-veg lovers"},
+ {p:"media/pb9.jpg",v:"media/lvb9.mp4",f:"media/fb9.mp4",t:"Iced mocha pour"},
+ {p:"media/pb7.jpg",v:"media/lvb7.mp4",f:"media/fb7.mp4",t:"Honey waffle"},
+ {p:"media/pb5.jpg",v:"media/lvb5.mp4",f:"media/fb5.mp4",t:"Behind the counter"},
+ {p:"media/pb4.jpg",v:"media/lvb4.mp4",f:"media/fb4.mp4",t:"Berry cooler pour"},
+ {p:"media/pb2.jpg",v:"media/lvb2.mp4",f:"media/fb2.mp4",t:"Iced espresso pour"},
+ {p:"media/pb8.jpg",v:"media/lvb8.mp4",f:"media/fb8.mp4",t:"Beyondd moments"}];
 const OTHERS=[];
 const CRUMBS=[
  {p:"media/pc1.jpg",v:"media/lvc1.mp4",f:"media/fc1.mp4",t:"Hi, we are Crumbs"},
@@ -813,6 +822,12 @@ const start=parseInt(location.hash.slice(1))||1;
 go(start-1);
 /* warm the next slides' media in the background once the first slide is up */
 addEventListener('load',()=>{warm(cur+1);warm(cur+2);});
+
+(function(){const ai=document.querySelector("#s6 .aisle");if(!ai)return;let dir=1,pos=0,hold=0;
+ const stop=()=>{hold=performance.now()+4000;pos=ai.scrollLeft;};
+ ["pointerdown","wheel","touchstart"].forEach(ev=>ai.addEventListener(ev,stop,{passive:true}));
+ ai.addEventListener("pointerenter",()=>hold=1e15);ai.addEventListener("pointerleave",()=>{hold=0;pos=ai.scrollLeft;});
+ (function step(t){if(ai.closest(".slide").classList.contains("on")&&t>hold){const max=ai.scrollWidth-ai.clientWidth;pos+=dir*0.9;if(pos>=max){pos=max;dir=-1;}if(pos<=0){pos=0;dir=1;}ai.scrollLeft=pos;}requestAnimationFrame(step);})(0);})();
 </script>
 </body>
 </html>
