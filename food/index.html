@@ -470,6 +470,19 @@ html,body{height:100%;background:#000814;overflow:hidden;font-family:Archivo,sys
 @keyframes igin{from{transform:translateY(400px) rotate(25deg);opacity:0}to{opacity:1}}
 #s6 .stat b{font-size:56px}
 
+#sR{background:#1E120C;color:#F3E6D3}
+#sR .mesh{background:radial-gradient(45% 50% at 50% 100%,#5A331C 0,transparent 70%)}
+#sR h2{position:absolute;left:128px;top:118px;color:#F3E6D3;font-size:54px;font-weight:900;letter-spacing:-.03em;margin:0}
+#sR .rrow{position:absolute;left:0;right:220px;top:220px;display:flex;justify-content:center;gap:44px}
+#sR .rc{margin:0;width:270px;display:flex;flex-direction:column;align-items:center;transform:rotate(var(--r))}
+#sR .phone.shot{width:270px;height:590px;border-radius:40px;border:10px solid #0B1020;background:#000;overflow:hidden;box-shadow:0 40px 80px rgba(0,0,0,.5)}
+#sR .phone.shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+#sR figcaption{margin-top:26px;text-align:center;line-height:1.15}
+#sR figcaption b{display:block;font-size:46px;font-weight:900;letter-spacing:-.03em;color:#E0A96D}
+#sR figcaption span{display:block;font-size:24px;font-weight:700}
+#sR figcaption em{display:block;margin-top:6px;font-size:20px;font-style:normal;color:#C9B497}
+#sR.on .rc{animation:rcin .9s var(--ease) calc(.25s + var(--i)*.12s) both}
+@keyframes rcin{from{opacity:0;transform:translateY(120px) rotate(var(--r))}to{opacity:1;transform:rotate(var(--r))}}
 /* ===== texture layers ===== */
 .slide{isolation:isolate}
 .slide::before,.slide::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1}
@@ -574,7 +587,7 @@ html,body{height:100%;background:#000814;overflow:hidden;font-family:Archivo,sys
     <h2><span class="rise" data-words>Café reels,</span> <span class="serif rise" data-words style="--d:200ms">shot &amp; cut</span> <span class="rise" data-words style="--d:380ms">end to end.</span></h2>
     <p class="d fade" style="--d:.6s">Beyondd Coffee and the coffee &amp; matcha bar.</p>
   </div>
-  <div class="stat fade" style="--d:.8s"><b data-count="3972" data-pre="+" data-suf="%" data-comma="1">0</b><span>accounts reached,<br>coffee &amp; matcha bar</span></div>
+  <div class="stat fade" style="--d:.8s"><b data-count="3972" data-pre="+" data-suf="%" data-comma="1">0</b><span>accounts reached,<br>Beyondd Coffee</span></div>
   <div class="cartbtn pop" style="--d:1s"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 8h6l5 24h24l4-16H13" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="18" cy="39" r="3.5" fill="currentColor"/><circle cx="36" cy="39" r="3.5" fill="currentColor"/></svg><b id="cartn" data-cartn>0</b></div>
   <div class="aisle" id="aisle"><div class="track" id="track"></div></div>
   <div class="plank"></div>
@@ -583,11 +596,17 @@ html,body{height:100%;background:#000814;overflow:hidden;font-family:Archivo,sys
 <!-- 5 CAFE RESULTS -->
 <section class="slide dk" id="sF" data-name="Café results">
   <div class="mesh"></div><div class="grain"></div>
-  <p class="k fade">Coffee &amp; matcha bar, Instagram Insights</p>
+  <p class="k fade">Beyondd Coffee, Instagram Insights</p>
   <div class="big"><span data-count="3972" data-pre="+" data-suf="%" data-comma="1">0</span></div>
   <p class="bigl fade" style="--d:.6s">growth in accounts reached</p>
-  <p class="foot fade" style="--d:1s">Nearly half of all views came from people who didn't follow the caf&eacute; yet. New customers, found through reels.</p>
+  <p class="foot fade" style="--d:1s">Nearly half of all views came from people who didn't follow Beyondd yet. New customers, found through reels.</p>
   <div class="phonebox"><div class="phone shot"><img src="media/rescafe.jpg" alt="Instagram Insights: accounts reached, +3,972%"></div></div>
+</section>
+
+<section class="slide dk" id="sR" data-name="Beyondd, every screen">
+  <div class="mesh"></div><div class="grain"></div>
+  <h2 class="rise" data-words>Every screen, straight from Beyondd's Insights</h2>
+  <div class="rrow"><figure class="rc" style="--i:0;--r:-5.0deg"><div class="phone shot"><img src="media/by1.jpg" alt="Beyondd Instagram Insights: 41,081 views on one reel" loading="lazy"></div><figcaption><b>41,081</b><span>views on one reel</span><em>33,820 accounts reached</em></figcaption></figure><figure class="rc" style="--i:1;--r:-2.5deg"><div class="phone shot"><img src="media/by2.jpg" alt="Beyondd Instagram Insights: 38,465 views on the next" loading="lazy"></div><figcaption><b>38,465</b><span>views on the next</span><em>29,021 accounts reached</em></figcaption></figure><figure class="rc" style="--i:2;--r:0.0deg"><div class="phone shot"><img src="media/by3.jpg" alt="Beyondd Instagram Insights: 41K top reel of the year" loading="lazy"></div><figcaption><b>41K</b><span>top reel of the year</span><em>Top 3 reels: 41K, 38.4K, 27.7K</em></figcaption></figure><figure class="rc" style="--i:3;--r:2.5deg"><div class="phone shot"><img src="media/by4.jpg" alt="Beyondd Instagram Insights: 10,725 views in 90 days" loading="lazy"></div><figcaption><b>10,725</b><span>views in 90 days</span><em>2,155 viewers, 3,278 followers</em></figcaption></figure><figure class="rc" style="--i:4;--r:5.0deg"><div class="phone shot"><img src="media/by5.jpg" alt="Beyondd Instagram Insights: +3,972% accounts reached" loading="lazy"></div><figcaption><b>+3,972%</b><span>accounts reached</span><em>30 days, 7,661 views</em></figcaption></figure></div>
 </section>
 
 <!-- 6 MORE FOOD -->
